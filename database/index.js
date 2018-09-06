@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('http://localhost/pledges', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/pledges', {useNewUrlParser: true});
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'error connection'));
