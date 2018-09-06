@@ -8,14 +8,14 @@ const faker = require('faker');
 // console.log(city);
 
 const createByFive = () => {
-  let num = Math.floor(Math.random() * 300);
+  let num = Math.floor(Math.random() * 35);
   if (num === 0) {
-    num = Math.floor(Math.random() * 300);
+    num = Math.floor(Math.random() * 35);
   } else {
-    while (num % 25 !== 0) {
+    while (num % 15 !== 0) {
       num--;
       if (num === 0) {
-        num = Math.floor(Math.random() * 300);
+        num = Math.floor(Math.random() * 35);
       }
     };
   }
@@ -24,7 +24,7 @@ const createByFive = () => {
 
 //make RNG func to create random # for backers
 const createBackers = () => {
-  let backers = Math.floor(Math.random() * 300);
+  let backers = Math.floor(Math.random() * 299);
   return backers;
 };
 
