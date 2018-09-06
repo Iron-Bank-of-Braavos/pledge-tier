@@ -20,16 +20,17 @@
   "homepage": "https://github.com/Iron-Bank-of-Braavos/pledge-tier#readme",
   "devDependencies": {},
   "dependencies": {
-    "nodemon": "^1.18.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "faker": "^4.1.0",
     "helmet": "^3.13.0",
     "mongoose": "^5.2.13",
     "morgan": "^1.9.0",
+    "nodemon": "^1.18.4",
     "path": "^0.12.7"
   }
 }
