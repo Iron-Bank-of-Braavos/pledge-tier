@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 app.use(helmet());
 app.use(parser.json());
 app.use(parser.urlencoded({extended: true}));
-app.use(express.static(path.resolve(__dirname, './static')));
+app.use(express.static(path.resolve(__dirname, '../static/')));
 app.use('/api', router);
 
 app.listen(PORT, () => {console.log(`<========== Server is Up ==========>`)});

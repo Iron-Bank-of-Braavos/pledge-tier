@@ -6,24 +6,23 @@ const limitPledges = () => {
   return num;
 }
 
-let num = limitPledges();
 
 module.exports = {
   get: (req, res) => {
-    Pledge.find({})
-    .limit(1)
-    // .sort({pledge_ammount: 1})
+    let num = limitPledges();
+    Pledge.aggregate([
+      {
+        $sample: {size: num}
+      }
+    ])
+    .sort({pledge_ammount: 1})
     .exec()
     .then((pledges) => {
-      let result = _.uniq(pledges, (pledge) => {
-        return pledge.pledge_ammount;
-      });
-      res.status(200).send(result);
+      res.status(200).send(pledges)
     })
     .catch((err) => {
       console.log(err);
     });
-    // res.status(200).send(num);
     //make query to db to fetch data
     //limit response with 10 - 15 pledges of different values
     //try to make each pledge ammount unique
@@ -33,3 +32,16 @@ module.exports = {
     console.log('in the post...');
   }
 }
+// Pledge.find({})
+    // .limit(1)
+    // // .sort({pledge_ammount: 1})
+    // .exec()
+    // .then((pledges) => {
+    //   let result = _.uniq(pledges, (pledge) => {
+    //     return pledge.pledge_ammount;
+    //   });
+    //   res.status(200).send(result);
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    // });
