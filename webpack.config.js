@@ -10,12 +10,24 @@ module.exports = {
   module: {
     rules: [
       {
-        loader: 'babel-loader',
         test: /\.js[x]?/,
+        loader: 'babel-loader',
         exclude: /(node_modules|dep)/,
         options: {
           presets: ['react', 'env']
         }
+      },
+      {
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: true
+          }
+        }],
+        // include: __dirname + '/client'
       }
     ]
   },

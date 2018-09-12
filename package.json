@@ -21,13 +21,15 @@
   },
   "homepage": "https://github.com/Iron-Bank-of-Braavos/pledge-tier#readme",
   "devDependencies": {
+    "css-loader": "^1.0.0",
     "eslint": "^5.5.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "style-loader": "^0.23.0"
   },
   "dependencies": {
     "axios": "^0.18.0",

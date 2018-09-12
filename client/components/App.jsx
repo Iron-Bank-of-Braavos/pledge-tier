@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import PledgesList from './PledgesList.jsx';
+import Support from './Support.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p>Hello from App</p>
+        <Support />
         <PledgesList pledges={this.state.pledges}/>
       </div>
     );
