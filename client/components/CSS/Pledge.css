@@ -1,8 +1,20 @@
 .container {
     border: 1px solid #000000;
     border-radius: 2px;
+    width: 750px;
     z-index: 2;
   }
-.container:hover {
-  background-color: blue
+  .hover {
+    opacity: 1;
+    -webkit-transition: opacity 500ms;
+  }
+.hover:hover{
+  animation-delay: 1000ms;
+  background-color: #009e74;
+  visibility: visible;
+  opacity: 0.8;
+}
+
+.text {
+  padding-left: 80px;
 }
