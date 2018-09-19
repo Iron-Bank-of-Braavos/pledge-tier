@@ -1,0 +1,32 @@
+.supportcontainer {
+  width: 33.333333%;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #656969;
+  display: block;
+  background: #FFFFFF;
+  border: 1px solid #DCDEDD;
+  position: relative;
+  word-break: break-word;
+}
+
+.supportTitle {
+  border: none;
+  padding-bottom: 1.2em;
+  background: none;
+  position: relative;
+  z-index: 1;
+  margin: 0 20px;
+  padding: 20px 0;
+  border-radius: 0;
+  font-size: 100%;
+    vertical-align: baseline;
+}
+
+.pledge__amount {
+  color: #282828;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}

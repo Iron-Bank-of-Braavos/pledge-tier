@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './CSS/Support.css';
 
 class Support extends React.Component {
   constructor(props) {
@@ -27,12 +28,16 @@ class Support extends React.Component {
 
   render() {
     return (
-      <div>
-      <h3>Support</h3>
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} value="5"/>
-      </form>
-    </div>
+      <div className={styles.supportcontainer}>
+        <div className={styles.supportTitle}>
+          <h2 className={styles.pledge_amount}>
+            Make a pledge without a reward
+          </h2>
+        </div>
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleChange} value="5"/>
+        </form>
+      </div>
     )
     
   }
