@@ -1,7 +1,14 @@
 .container {
-    border: 1px solid #000000;
-    border-radius: 2px;
-    width: 750px;
+    border: 1px solid #DCDEDD;
+    border-radius: 0;
+    width: 33.333333%;
+    display: block;
+    z-index: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* padding-top: 20px; */
+    padding-bottom: 20px;
+    position: relative;
   }
 
   /* .hover {
@@ -24,13 +31,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
   opacity: 0;
   transition: .5s ease;
   background-color: #009e74;
+  overflow: hidden;
 }
-.text {
+.select {
   color: white;
   font-size: 20px;
   position: absolute;
@@ -38,4 +46,17 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.pledge_amount {
+  color: #282828;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 20px
+}
+
+.money {
+  white-space: nowrap;
+  font-size: 100%;
 }
