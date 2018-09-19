@@ -1,30 +1,33 @@
 import styles from './CSS/Pledge.css';
 import React from 'react';
+import Amount from './PledgeAmount.jsx';
+// import PledgeDefault from './pledgedefault.jsx';
 
 class Pledge extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showButton: false
+      showButton: false,
+      overlay: styles.overlay
     }
-    this.handleHover = this.handleHover.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-
-  handleHover() {
-    console.log('hello');
+  handleClick(e) {
+    console.log('clicked me')
+    e.preventDefault();
     this.setState({
-      showButton: !this.state.showButton
+      showButton: true,
+      overlay: ''
     });
   }
-
   render() {
-    // this.state.showButton ? console.log('yas') : console.log('nah');
-    return(
+    this.state.showButton ? console.log('yas') : console.log('nah');
+    return (
       //on hover show button
       <div > 
         <ul>
-        <div className={styles.container} onMouseOver={this.handleHover}>
-          <div className={styles.overlay}>
+        <div className={styles.container} onClick={this.handleClick}>
+          <div className={this.state.overlay}>
             <div className={styles.select}>Select this Reward</div>
           </div>
           <div>
@@ -47,6 +50,7 @@ class Pledge extends React.Component {
             <div>
               <span>{this.props.pledge.backers} backers</span>
             </div>
+              {this.state.showButton ? <Amount /> : null}
           </div>
         </div>
       </ul>

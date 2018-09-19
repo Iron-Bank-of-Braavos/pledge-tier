@@ -22,7 +22,7 @@
   z-index: 2;
 } */
 .container:hover .overlay{
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 .overlay {
@@ -37,6 +37,7 @@
   transition: .5s ease;
   background-color: #009e74;
   overflow: hidden;
+  cursor: pointer;
 }
 .select {
   color: white;
