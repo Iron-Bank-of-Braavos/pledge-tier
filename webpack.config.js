@@ -17,6 +17,7 @@ module.exports = {
           presets: ['react', 'env']
         }
       },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
       {
         test: /\.css$/,
         use: [{

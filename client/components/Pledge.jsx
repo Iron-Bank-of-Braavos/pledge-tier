@@ -1,5 +1,6 @@
 import styles from './CSS/Pledge.css';
 import React from 'react';
+// import reward from './Pledge Image/select_reward.png'
 
 // const Container = {
 //   border: '10px', 
@@ -42,6 +43,7 @@ class Pledge extends React.Component {
   }
 
   handleHover() {
+    console.log('hello');
     this.setState({
       showButton: !this.state.showButton
     });
@@ -53,15 +55,18 @@ class Pledge extends React.Component {
       //on hover show button
       <ul>
         {/* <div class="text">select this pledge</div> */}
-        <div  className={styles.container}>
-          <div className={styles.hover} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+        <div className={styles.container} onMouseOver={this.handleHover}>
+          <div className={styles.overlay}>
+            <div className={styles.text}>Select this Reward</div>
+          </div>
+          <div>
             <span>Pledge ${this.props.pledge.pledge_ammount} or more</span>
-            <div className={styles.text}>
+            <div>
               <h3>
                 Rewards
               </h3>
             </div>
-            <ul className={styles.text}>{this.props.pledge.reward}</ul>
+            <span>{this.props.pledge.reward}</span>
             <div>
               <span>ESTIMATED DELIVERY</span>
               <span>{this.props.pledge.eta}</span>

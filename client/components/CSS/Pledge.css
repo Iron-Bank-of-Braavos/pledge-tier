@@ -2,19 +2,40 @@
     border: 1px solid #000000;
     border-radius: 2px;
     width: 750px;
-    z-index: 2;
   }
-  .hover {
+
+  /* .hover {
     opacity: 1;
-    -webkit-transition: opacity 500ms;
-  }
-.hover:hover{
+    -webkit-transition: background-color 500ms;
+  } */
+/* .container:hover .overlay{
   animation-delay: 1000ms;
-  background-color: #009e74;
   visibility: visible;
+  opacity: 0.9;
+  z-index: 2;
+} */
+.container:hover .overlay{
   opacity: 0.8;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #009e74;
+}
 .text {
-  padding-left: 80px;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
 }
