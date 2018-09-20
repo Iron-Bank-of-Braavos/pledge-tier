@@ -1,22 +1,26 @@
 import React from 'react';
 import styles from './CSS/Support.css';
+import Amount from './PledgeAmount.jsx';
 
 class Support extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      pledge: ''
+      pledge: '5',
+      css: styles.supportcontainer
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     console.log('the pledge ', this.state.pledge);
     this.setState({
-      pledge: ''
+      showButton: false,
+      // pledge: ''
     });
   }
 
@@ -26,18 +30,26 @@ class Support extends React.Component {
     });
   }
 
+  handleClick() {
+    this.setState({
+      showButton: true,
+      // css: styles.supportcontainerclick
+    })
+  }
+
   render() {
     return (
-      <div className={styles.supportcontainer}>
-        <div className={styles.supportTitle}>
-          <h2 className={styles.pledge_amount}>
-            Make a pledge without a reward
-          </h2>
-        </div>
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} value="5"/>
-        </form>
-      </div>
+      <li className={styles.list}>
+        <div className={this.state.css} onClick={this.handleClick}>
+            <div className={styles.supportTitle}>
+              <h2 className={styles.pledge_amount}>
+                Make a pledge without a reward
+              </h2>
+              {this.state.showButton ? <Amount /> : <input className={styles.inputfield} value={this.state.pledge} onChange={this.handleChange}/>}
+            </div>
+          </div>
+      </li>
+      
     )
     
   }

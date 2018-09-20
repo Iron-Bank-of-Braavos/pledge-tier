@@ -13,7 +13,6 @@ class Pledge extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(e) {
-    console.log('clicked me')
     e.preventDefault();
     this.setState({
       showButton: true,
@@ -21,39 +20,46 @@ class Pledge extends React.Component {
     });
   }
   render() {
-    this.state.showButton ? console.log('yas') : console.log('nah');
+    console.log(this.props.pledge);
     return (
-      //on hover show button
       <div > 
-        <ul>
-        <div className={styles.container} onClick={this.handleClick}>
+        <li className={styles.list}>
+        <div className={styles.container} onClick={(e)=>{this.handleClick(e)}}>
           <div className={this.state.overlay}>
             <div className={styles.select}>Select this Reward</div>
           </div>
-          <div>
-            <h2 className={styles.pledge_ammount}>Pledge</h2>
-            <span className={styles.money}> ${this.props.pledge.pledge_ammount} or more</span>
-            <div>
-              <h3>
+          <div className={styles.pledge_info}>
+            <h2 className={styles.pledge_ammount}>
+              
+              Pledge 
+            <span className={styles.money}> ${this.props.pledge.pledge_ammount} </span>
+              
+              or more
+              
+            </h2>
+            <div className={styles.rewards}>
+              <h3 className={styles.rewards_title}>
                 Rewards
               </h3>
+            <span className={styles.pledge_descip}>
+              {this.props.pledge.reward}
+            </span>
             </div>
-            <span>{this.props.pledge.reward}</span>
-            <div>
-              <span>ESTIMATED DELIVERY</span>
-              <span>{this.props.pledge.eta}</span>
+            <div className={styles.pledge_delivery}>
+              <span className={styles.delivery_detail}>ESTIMATED DELIVERY</span>
+              <span className={styles.date}>{this.props.pledge.eta}</span>
             </div>
-            <div>
-              <span>SHIPS TO</span>
-              <span>{this.props.pledge.shipping_location}</span>
+            <div className={styles.pledge_ship}>
+              <span className={styles.ship_detail}>SHIPS TO</span>
+              <span className={styles.date}>{this.props.pledge.shipping_location}</span>
             </div>
-            <div>
-              <span>{this.props.pledge.backers} backers</span>
+            <div className={styles.backers}>
+              <span className={styles.backer_detail}>{this.props.pledge.backers} backers</span>
             </div>
               {this.state.showButton ? <Amount /> : null}
           </div>
         </div>
-      </ul>
+      </li>
       </div>
       
     );
