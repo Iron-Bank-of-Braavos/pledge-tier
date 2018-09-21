@@ -1,20 +1,17 @@
 const { Pledge } = require('../database/models.js');
 const _ = require('underscore');
 
-const limitPledges = () => {
-  let num = Math.floor(Math.random() * 16);
-  return num;
-}
+// const limitPledges = () => {
+//   let num = Math.floor(Math.random() * 16);
+//   return num;
+// }
 
 
 module.exports = {
   get: (req, res) => {
+    const { projectId } = req.query;
     let num = limitPledges();
-    Pledge.aggregate([
-      {
-        $sample: {size: num}
-      }
-    ])
+    Pledge.find({projectId: projectId})
     .sort({pledge_ammount: 1})
     .exec()
     .then((pledges) => {

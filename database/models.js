@@ -6,7 +6,8 @@ const pledgeSchema = mongoose.Schema({
   reward: {type: String, required: true},
   eta: {type: String, required: true},
   shipping_location: {type: String, required: true},
-  backers: {type: Number, required: true}
+  backers: {type: Number, required: true},
+  projectId: {type: [Number], required: true}
 });
 
 const Pledge = mongoose.model('Pledge', pledgeSchema);

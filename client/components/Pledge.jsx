@@ -20,7 +20,7 @@ class Pledge extends React.Component {
     });
   }
   render() {
-    console.log(this.props.pledge);
+    // console.log(this.props.pledge);
     return (
       <div > 
         <li className={styles.list}>
