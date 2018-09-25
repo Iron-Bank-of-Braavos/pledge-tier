@@ -1,6 +1,6 @@
 .supportcontainer {
   font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-  width: 33.333333%;
+  /* width: 100%; */
   margin-bottom: 20px;
   font-size: 14px;
   color: #656969;
@@ -42,7 +42,7 @@
   height: 42px;
   line-height: 20px;
   box-sizing: border-box;
-  width: 100%;
+  /* width: 100%; */
   font-size: 16px;
 }
 
@@ -51,16 +51,3 @@
   padding: 0;
   margin: 0;
 }
-
-/* .supportcontainerclick {
-  width: 33.333333%;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #656969;
-  display: block;
-  background: #FFFFFF;
-  border: 1px solid #0000;
-  position: relative;
-  word-break: break-word;
-  cursor: pointer;
-} */

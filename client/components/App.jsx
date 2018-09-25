@@ -19,7 +19,7 @@ class App extends React.Component {
   fetchPledges() {
     let num = Math.floor(Math.random() * 101);
     console.log(num);
-    axios.get('/api/rewards', {params: {projectId: num}})
+    axios.get('http://54.184.123.204:3003/api/rewards', {params: {projectId: num}})
     .then((res) => {
       console.log(res.data);
       this.setState({

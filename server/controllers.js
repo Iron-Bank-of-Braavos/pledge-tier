@@ -10,7 +10,7 @@ const _ = require('underscore');
 module.exports = {
   get: (req, res) => {
     const { projectId } = req.query;
-    let num = limitPledges();
+    // let num = limitPledges();
     Pledge.find({projectId: projectId})
     .sort({pledge_ammount: 1})
     .exec()
